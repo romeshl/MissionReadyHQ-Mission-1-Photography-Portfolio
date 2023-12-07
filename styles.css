@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+/* Setting variables for colors and fonts */
+:root {
+    --header-background:#776B5D;
+    --header-text: #EBE3D5;
+    --left-background: #EBE3D5;
+    --left-button-background: #B0A695;
+    --left-button-text: #776B5D;
+    --right-background: #F3EEEA;
+    --right-text: #776B5D;
+    --footer-background: #B0A695;
+    --footer-text: #776B5D;
+
+    --primary-font: 'Lobster', sans-serif;
+    --secondary-font: 'Roboto Condensed', sans-serif;
+}
+
+/* Setting main font-family for headings */
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--primary-font);
+}
+
+/* Setting secondary font-family for other text tags */
+p,
+li {
+    font-family: var(--secondary-font);
+}
+
+/* header section */
+header {
+    width: 100%;
+    background-color: var(--header-background);
+    color: var(--header-text);
+    text-align: center;
+    padding: 50px;
+    border-bottom: 2px solid white;
+}
+
+/* setting font size of main heading */
+h1 {
+    font-size: 60px;
+}
+
+/* removing hyperlinks default settings */
+a {
+    text-decoration: none;
+    color: var(--header-background);
+    background-color: var(--header-text);
+}
+
+/* setting hyperlink behavior on the right side of the body, which is the main section */
+#resources a:hover, #about a:hover {
+    color: var(--header-text);
+    background-color: var(--header-background);
+}
+
+/* Setting properties for the main body sections */
+/* ----------------------------------------------------*/
+body {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left {
+    flex: 20%;
+    background-color: var(--left-background);
+    padding: 20px;
+    border: 0.5px solid white;
+}
+
+.right {
+    flex: 80%;
+    background-color: var(--right-background);
+    padding: 20px;
+    border: 0.5px solid white;
+}
+
+/* ----------------------------------------------------*/
+/* Setting left side nav bar properties */
+.subheadings {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 10%;
+}
+
+/* Setting properties of the individual buttons */
+.subheadings h4 {
+    margin: 10px 10px;
+    padding: 10px 10px;
+    background-color: var(--left-button-background);
+    text-align: center;
+    border-radius: 5px;
+    color: var(--left-button-text);
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 18px;
+}
+
+/* Setting button behavior on mouse hover */
+.subheadings h4:hover {
+    background-color: var(--left-button-text);
+    color: var(--left-button-background);
+}
+/*-----------------------------------------------------*/
+
+/* Adding a line at the bottom to seperate each article */
+article {
+    border-bottom: 2px solid var(--header-background);
+    padding-bottom: 50px;
+}
+
+/* removing the line at the bottom of the last article */
+article:last-of-type {
+    border-bottom: none;
+}
+
+/* Setting font colors for right side body texts */
+section>* {
+    color: var(--right-text);
+}
+
+/* Setting properties of the headings in right-side of the body */
+article h2,
+article h3 {
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+article h2 {
+    font-size: 35px;
+}
+
+article h3 {
+    font-size: 25px;
+}
+/*-------------------------------------------------------*/
+
+/* Setting the properties of the container of photos */
+.photos {
+    display: flex;
+    width: 80%;
+    left: 10%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 0 auto;
+}
+
+/* Setting properties of photos */
+.photos img {
+    width: 230px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 20px 20px 20px grey;
+    border: 1px none grey;
+    transition: transform 0.5s;
+}
+
+/* Setting the behaviour of the photo when mouse is hovering over */
+img:hover {
+    transform: scale(1.05);
+}
+
+/* This adds an empty space as a placeholder to the photo container, so that the last photo doesn't get centered */
+.photos::after {
+    width: 230px;
+    content: "";
+}
+
+/* Leaves an enough gap between each photo section */
+.photos {
+    margin-bottom: 75px;
+}
+
+/* Sets the authors name bold in About section */
+.signature {
+    font-weight: bold;
+}
+
+/* Sets the spacing between li items in Resources section */
+#resources li {
+    padding: 5px;
+}
+
+/* Sets the spacing and placement of social media icons in Contacts section */
+.socialmedia {
+    display: inline-block;
+    padding: 5px;
+}
+
+/* Sets the properties of contact form */
+fieldset {
+    width: 70%;
+    margin: 30px auto;
+    font-family: var(--secondary-font);
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: var(--left-background);
+    border: none;
+}
+
+label {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+input,
+textarea {
+    width: 100%;
+    font-family: var(--secondary-font);
+    border: 1px solid var(--header-background);
+    font-size: 14px;
+}
+
+input[type="submit"] {
+    margin: 0 auto;
+    color: var(--header-background);
+    width: 50%;
+    height: 30px;
+    margin-left: 25%;
+    background-color: var(--footer-background);
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: var(--primary-font);
+    font-size: 18px;
+}
+/*-----------------------------------------------------*/
+
+/* Sets the properties of the footer section */
+footer {
+    padding: 20px;
+    text-align: center;
+    background: var(--footer-background);
+    color: var(--footer-text);
+    border-top: 2px solid white;
+}
